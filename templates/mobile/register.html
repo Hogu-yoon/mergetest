@@ -1,0 +1,61 @@
+{% extends "./base.html" %}
+{% load static %}
+{% block register_head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" , initial-scale="1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/register/register.css' %}">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
+    <script defer src="{% static 'js/register/register.js' %}"></script>
+{% endblock register_head %}
+
+{% block register_header %}
+    <div id="header">
+        <div class="back_allow"><i class="fas fa-arrow-left"></i></div>
+        <p>회원가입</p>
+    </div>
+{% endblock register_header %}
+
+
+{% block register_body %}
+    <div id="main">
+        <section class="body_register">
+            <div class="service_title"><img class="register_title_img" src="{% static "img/fiveicon/tomorrow_clothes(흰색).png" %}"></div>
+            <form class="input_register" action="{% url 'test_1:register' %}" method="post">
+                <div class="input_wrapper">
+                    <div class="input_data">
+                        <input type="text" name="nick_name" required/>
+                        <div class="underline"></div>
+                        <label>Nickname</label>
+                    </div>
+                    <div class="input_data">
+                        <input type="text" name="email" required/>
+                        <div class="underline"></div>
+                        <label>Email</label>
+                    </div>
+                    <div id="password" class="input_data">
+                        <input type="password" id="show_password" name="password" required/>
+                        <div class="underline"></div>
+                        <label>Password</label>
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="find_pw">
+                        <p>
+                            <a>Forget your password?</a>
+                        </p>
+                    </div>
+
+                    <button type="submit">Register</button>
+                </div>
+            </form>
+            <div class="platform_btn_register">
+                <button class="kakao_regist_btn_wrapper">
+                    <img class="kakao_signin_img"src="{% static "img/fiveicon/loginpage_kakaologo.png" %}">
+                    <p class="kakao_singup_str">Sign up with KaKao</p>
+                </button>
+            </div>
+        </section>
+    </div>
+    <div id="footer"></div>
+{% endblock register_body %}
